@@ -9,10 +9,10 @@ import { Product } from "./product.model";
 export class ProductComponent {
 	model: Model = new Model();
 
-    constructor(ref: ApplicationRef) {
+   /* constructor(ref: ApplicationRef) {
         (<any>window).appRef = ref;
         (<any>window).model = this.model;
-    }
+    }*/
 
     getProductByPosition(position: number): Product {
         return this.model.getProducts()[position];
@@ -35,5 +35,5 @@ export class ProductComponent {
         return this.getProducts().length;
     }
 
-    targetName: string = "Kayak";
+  /*  targetName: string = "Kayak";*/
 }

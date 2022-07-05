@@ -1,6 +1,9 @@
 <div class="text-white">
-    <div class="bg-info p-2">
-      There are {{getProductCount()}} products.
+    <div class="bg-info p-2 m-2">
+      Toplam {{getProductCount()}} ürün mevcuttur.
+    </div>
+    <div *ngIf="getProductCount() >4" class="bg-info m-2 p-2">
+    ürün sayısı 4 ten fazla ise bu kısım aktif olur..
     </div>
 </div>
   
