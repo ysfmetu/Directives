@@ -7,8 +7,10 @@ import { Product } from "./product.model";
 	templateUrl: "template.html"
 })
 export class ProductComponent {
+
 	model: Model = new Model();
      targetName: string = "Kayak";
+     public selectedProduct: string | undefined;
 
     getProductByPosition(position: number): Product {
         return this.model.getProducts()[position];
@@ -24,6 +26,17 @@ export class ProductComponent {
 
     getProductCount(): number {
         return this.getProducts().length;
+    }
+    getSelectedProduct(product:Product):boolean{
+        return product.name===this.selectedProduct;
+    }
+    newProduct: Product = new Product();
+
+    get jsonProduct() {
+        return JSON.stringify(this.newProduct);
+    }
+    addProduct(p: Product) {
+        console.log("New Product: " + this.jsonProduct);
     }
 
 
